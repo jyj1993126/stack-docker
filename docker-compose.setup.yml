@@ -24,7 +24,7 @@ services:
       - './config:/config'
       - './scripts/setup-kibana.sh:/usr/local/bin/setup-kibana.sh:ro'
       - './config/ssl/ca/ca.crt:/usr/share/kibana/config/ca/ca.crt'
-    depends_on: ['elasticsearch']
+    depends_on: ['elasticsearch', 'elasticsearch2', 'elasticsearch3']
     networks: ['stack']
 
   setup_logstash:
